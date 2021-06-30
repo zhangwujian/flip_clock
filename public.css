@@ -1,0 +1,78 @@
+@keyframes flip-clock {
+    0% {
+      transform: rotate3d(-1, 0, 0, -180deg);
+    }
+    to {
+      transform: rotate3d(-1, 0, 0, 0deg);
+    }
+  }
+  @keyframes flip-horizontal-bottom {
+    0% {
+      transform: rotateX(-180deg);
+    }
+    to {
+      transform: rotateX(0deg);
+    }
+  }
+  @keyframes flip-horizontal-bottom-reverse {
+    0% {
+      transform: rotateX(-180deg);
+    }
+    49% {
+      transform: rotateX(-180deg);
+    }
+    50% {
+      transform: rotateX(0deg);
+    }
+    to {
+      transform: rotateX(0deg);
+    }
+  }
+  
+  .time-number-container {
+    width: 40px;
+  }
+  .time-number {
+    width: 40px;
+    height: 30px;
+    border-radius: 15px;
+  }
+  .top-clip, .bottom-clip, .time-container::after {
+    height: calc(30px/2);
+  }
+  .time-container::after {
+    width: 40px;
+    height: calc(30px/2);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .bottom-clip {
+    top: calc(30px/2);
+  }
+  .time-number:not(.bottom):not(.top) {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  }
+  
+  
+  .background--ui-mono-7 {
+  background-color: #fff;
+  }
+  .text-b3-standard {
+  font-weight: 400;
+  }
+  .text-b3-standard,
+  .text-b3-standard-bold {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    text-decoration: none;
+    text-transform: none;
+  }
+  .text--ui-mono-7 {
+    color: #fff;
+  }
+  
+  *,
+  :after,
+  :before {
+  box-sizing: inherit;
+  }

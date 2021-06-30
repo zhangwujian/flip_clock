@@ -1,0 +1,95 @@
+.countdown-clock .timer {
+    display: -ms-flexbox;
+    display: flex;
+}
+.countdown-clock .time-container {
+    position: relative;
+    text-align: center;
+}
+.countdown-clock .time-number-container {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+.countdown-clock .time-number {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 auto;
+    border-width: 1px;
+    border-style: solid;
+}
+.countdown-clock .time-number:not([class*="border--"]) {
+    border-color: transparent;
+}
+.countdown-clock .time-value {
+    text-align: center;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.countdown-clock .time-container {
+    position: relative;
+}
+.countdown-clock .time-container:after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 4;
+}
+.countdown-clock .time-container .animation-middle .time-number:not(.bottom):not(.top) {
+    box-shadow: none;
+}
+.countdown-clock .time-container.animation-middle .top-clip {
+    z-index: 3;
+}
+.countdown-clock .time-container.animation-middle .bottom-clip {
+    z-index: 1;
+}
+.countdown-clock .time-number:not(.bottom):not(.top) {
+    transition: box-shadow 0.2s ease-out 0.2s;
+    animation: flip-clock .4s linear both;
+    position: relative;
+    z-index: 2;
+}
+.countdown-clock .time-number:not(.bottom):not(.top) .time-value {
+    animation: flip-horizontal-bottom-reverse 0.4s linear both;
+}
+.countdown-clock .time-number ~ .top-clip {
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+.countdown-clock .time-number ~ .top-clip .top {
+    position: absolute;
+    top: 0;
+}
+.countdown-clock .time-number ~ .bottom-clip {
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+}
+.countdown-clock .time-number ~ .bottom-clip .bottom {
+    position: absolute;
+    bottom: 0;
+}
+.countdown-clock.text-align-center .timer {
+    -ms-flex-pack: center;
+    justify-content: center;
+    will-change: transform,opacity;
+}
